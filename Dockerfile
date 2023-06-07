@@ -7,7 +7,9 @@ RUN pip3 install --upgrade pip
 WORKDIR /home/docker_user
 
 RUN python3.7 -m pip install scikit-learn==0.22.1
-RUN pip install scipy
+RUN python3.7 -m pip install scipy
 
-ADD timeseriesrc 2
-ENTRYPOINT python3 test.py
+ADD timeseriesrc ./timeseriesrc
+COPY entrypoint.sh result.txt ./
+RUN chmod +x entrypoint.sh
+ENTRYPOINT ./entrypoint.sh
