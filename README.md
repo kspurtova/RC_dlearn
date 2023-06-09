@@ -35,23 +35,3 @@ After that the container will stop and output files will be availiable.
 docker ps -a
 docker cp <container_id>:/home/docker_user/images/outputs ~/<your_folder>
 ```
-
-## How to build Docker image
-If you are brave enough you can try to build an image all by yourself.  
-
-Firstly clone this repository recursively
-
-```
-git clone https://github.com/kspurtova/RC_dlearn.git --recursive
-cd RC_dlearn
-```
-Make sure you have Docker installed and your Docker daemon is running  
-Then build an image
-```
-docker build -t rc .
-```
-
-You can try to run it with 
-```
-docker run rc
-```
